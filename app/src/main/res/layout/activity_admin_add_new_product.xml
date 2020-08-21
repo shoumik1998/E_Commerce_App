@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminAddNewProduct">
+
+    <ImageView
+        android:layout_margin="8dp"
+        android:id="@+id/add_new_product_imageID"
+        android:layout_gravity="center"
+        android:src="@drawable/select_product_image"
+        android:layout_width="320dp"
+        android:layout_height="320dp"/>
+
+    <EditText
+        android:textColor="#088da5"
+        android:textColorHint="#088da5"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:padding="7dp"
+        android:background="@drawable/add_product_back"
+        android:id="@+id/product_name_editID"
+        android:hint="Product Name"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:textColor="#088da5"
+        android:textColorHint="#088da5"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:padding="7dp"
+        android:background="@drawable/add_product_back"
+        android:id="@+id/product_descriptions_editID"
+        android:hint="Product Descriptions"
+        android:layout_width="350dp"
+        android:layout_height="60dp"/>
+    <EditText
+        android:textColor="#088da5"
+        android:textColorHint="#088da5"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:padding="7dp"
+        android:background="@drawable/add_product_back"
+        android:id="@+id/product_price_editID"
+        android:hint="Product Price"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:textColor="#FFFFFF"
+        android:background="@drawable/add_product_btn_back"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:text="Add Product"
+        android:id="@+id/add_new_product_btnID"
+        android:layout_width="300dp"
+        android:layout_height="60dp"/>
+
+</LinearLayout>

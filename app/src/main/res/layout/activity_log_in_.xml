@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogIn_Activity">
+
+    <EditText
+        android:inputType="phone"
+        android:textColor="#4ca3dd"
+        android:padding="7dp"
+        android:id="@+id/phn_number_editID"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:background="@drawable/join_btn_back"
+        android:hint="  Phone Number"
+        android:textColorHint="#4ca3dd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <EditText
+        android:textColor="#4ca3dd"
+        android:id="@+id/password_editID"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/join_btn_back"
+        android:hint="  Password"
+        android:padding="7dp"
+        android:textColorHint="#4ca3dd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phn_number_editID" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_editID"
+        app:layout_constraintVertical_bias="0.059">
+
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/remember_me_chkb"
+            style="@style/Material.Drawable.CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Remember me" />
+
+        <TextView
+            android:id="@+id/forget_passID"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="39dp"
+            android:layout_height="wrap_content"
+            android:text="Forget Password ?" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.045">
+
+        <TextView
+            android:id="@+id/i_am_admin_textID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:text="I am admin" />
+
+        <TextView
+            android:layout_marginStart="100dp"
+            android:id="@+id/i_am_not_admin_textID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am not admin"
+            android:layout_marginLeft="100dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btnID2"
+        android:layout_width="289dp"
+        android:layout_height="75dp"
+        android:background="@drawable/login_btn_back"
+        android:padding="5dp"
+        android:text="Log In"
+        android:textColor="#FFFFFF"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.175" />
+</androidx.constraintlayout.widget.ConstraintLayout>

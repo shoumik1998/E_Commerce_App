@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:textColor="#4ca3dd"
+        android:padding="7dp"
+        android:inputType="text"
+        android:id="@+id/reg_name_editID"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="@drawable/join_btn_back"
+        android:hint="  Name"
+        android:textColorHint="#4ca3dd"
+        app:layout_constraintBottom_toTopOf="@+id/reg_phone_editID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.632" />
+
+    <EditText
+        android:textColor="#4ca3dd"
+        android:padding="7dp"
+        android:inputType="phone"
+        android:id="@+id/reg_phone_editID"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/join_btn_back"
+        android:hint="  Phone Number"
+        android:textColorHint="#4ca3dd"
+        app:layout_constraintBottom_toTopOf="@+id/reg_pasword_editID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:textColor="#4ca3dd"
+        android:padding="7dp"
+        android:id="@+id/reg_pasword_editID"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/join_btn_back"
+        android:hint="  Password"
+        android:textColorHint="#4ca3dd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/reg_btnID"
+        android:layout_width="253dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/login_btn_back"
+        android:text="Create Account"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_pasword_editID" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
