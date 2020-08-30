@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Confirm_Final_Order">
+
+    <TextView
+        android:textColor="#008080"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:text="Please provide your details below"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_marginTop="18dp"
+        android:textColor="#008080"
+        android:textColorHint="#008080"
+        android:hint="Your Name"
+        android:layout_gravity="center"
+        android:id="@+id/confirm_order_nameID"
+        android:layout_width="350dp"
+        android:layout_height="65dp"/>
+    <EditText
+        android:layout_marginTop="18dp"
+        android:textColor="#008080"
+        android:textColorHint="#008080"
+        android:hint="phone Number"
+        android:layout_gravity="center"
+        android:id="@+id/confirm_order_numberID"
+        android:layout_width="350dp"
+        android:layout_height="65dp"/>
+    <EditText
+        android:layout_marginTop="18dp"
+        android:textColor="#008080"
+        android:textColorHint="#008080"
+        android:hint="Your Home Address"
+        android:layout_gravity="center"
+        android:id="@+id/confirm_order_addressID"
+        android:layout_width="350dp"
+        android:layout_height="65dp"/>
+    <EditText
+        android:layout_marginTop="18dp"
+        android:textColor="#008080"
+        android:textColorHint="#008080"
+        android:hint="City Name"
+        android:layout_gravity="center"
+        android:id="@+id/confirm_order_city_nameID"
+        android:layout_width="350dp"
+        android:layout_height="65dp"/>
+
+    <Button
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/confirm_order_btn_back"
+        android:textSize="25dp"
+        android:text="Confirm  order"
+        android:id="@+id/confirm_order_btnID"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="65dp"/>
+
+
+</LinearLayout>

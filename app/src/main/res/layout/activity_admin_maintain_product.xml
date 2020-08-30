@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".AdminMaintainProduct">
+
+    <ImageView
+        android:id="@+id/maintain_imgID"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"/>
+
+    <EditText
+        android:textAlignment="center"
+        android:hint="Product name..."
+        android:id="@+id/maintain_product_nameID"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_horizontal" />
+    <EditText
+        android:textAlignment="center"
+        android:hint="Product price..."
+        android:id="@+id/maintain_product_priceID"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_horizontal" />
+    <EditText
+        android:textAlignment="center"
+        android:hint="Product description..."
+        android:id="@+id/maintain_product_descriptionID"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_horizontal" />
+    <Button
+        android:textAlignment="center"
+        android:text="Apply change"
+        android:id="@+id/apply_change_BtnID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+    <Button
+        android:text="Delete Product"
+        android:id="@+id/maintain_product_delete_btnID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

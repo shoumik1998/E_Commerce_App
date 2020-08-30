@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView app:cardElevation="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="30dp"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:id="@+id/admin_orders_user_name_txtID"
+            android:layout_margin="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#008080"
+            android:layout_below="@+id/admin_orders_user_name_txtID"
+            android:textSize="20dp"
+            android:id="@+id/admin_orders_user_phone_txtID"
+            android:layout_margin="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+        <TextView
+            android:textColor="#0000ff"
+            android:layout_margin="12dp"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/admin_orders_user_phone_txtID"
+            android:id="@+id/admin_orders_price_txtID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="#800080"
+            android:layout_margin="12dp"
+            android:textSize="20dp"
+            android:id="@+id/admin_orders_user_address_txtID"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/admin_orders_price_txtID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#8a2be2"
+            android:layout_margin="12dp"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/admin_orders_user_address_txtID"
+            android:id="@+id/admin_orders_user_city_name_txtID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="#407294"
+            android:layout_margin="12dp"
+            android:textSize="20dp"
+            android:id="@+id/admin_orders_date_txtID"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/admin_orders_user_city_name_txtID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/admin_orders_BtnID"
+            android:layout_margin="8dp"
+            android:textSize="18dp"
+            android:textColor="#0000ff"
+            android:background="@drawable/join_btn_back"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/admin_orders_date_txtID"
+            android:text="See ordered products "
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
