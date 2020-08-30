@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_margin="20dp"
+        android:id="@+id/pd_imageID"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:text="name"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/pd_product_name_txtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="desc"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/pd_product_des_txtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="price"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/pd_product_price_txtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        app:initialNumber="1"
+        app:finalNumber="10"
+        android:elevation="6dp"
+        app:textSize="16dp"
+        android:layout_margin="20dp"
+        android:id="@+id/elegent_btnID"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/pd_fatID"
+            android:elevation="6dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/nav_cart"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>

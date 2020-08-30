@@ -45,15 +45,27 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
     private AppBarConfiguration mAppBarConfiguration;
     private DatabaseReference product_ref;
     private RecyclerView Product_RecyclerView;
+    private  FloatingActionButton Fab;
+    private String admin_key = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        admin_key = getIntent().getStringExtra("Admin");
         product_ref = FirebaseDatabase.getInstance().getReference().child("Products");
         Product_RecyclerView = findViewById(R.id.user_recyclerID);
         Product_RecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Fab = (FloatingActionButton) findViewById(R.id.fab);
+        Fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
         Paper.init(this);
@@ -79,15 +91,23 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
 
         View header_view = navigationView.getHeaderView(0);
-        TextView User_name = header_view.findViewById(R.id.user_name_textID);
-        CircleImageView User_Profile_pic = header_view.findViewById(R.id.user_profile_image);
-        User_name.setText(Prevalent.current_online_users.getName());
-        Picasso.get().load(Prevalent.current_online_users.getImage()).placeholder(R.drawable.profile).into(User_Profile_pic);
+        if (admin_key!=null) {
+            if (admin_key.equals("Admin")) {
+
+            }
+        }else {
+            TextView User_name = header_view.findViewById(R.id.user_name_textID);
+            CircleImageView User_Profile_pic = header_view.findViewById(R.id.user_profile_image);
+            User_name.setText(Prevalent.current_online_users.getName());
+            Picasso.get().load(Prevalent.current_online_users.getImage()).placeholder(R.drawable.profile).into(User_Profile_pic);
+        }
+
+        fetching_product_images();
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -120,47 +140,86 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
         int id=menuItem.getItemId();
 
         if (id==R.id.nav_cart){
-            Toast.makeText(this, "cart", Toast.LENGTH_SHORT).show();
+            if (admin_key==null) {
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
 
-        }else if (id==R.id.nav_orders){
-            Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show();
 
-        }else if (id==R.id.nav_categories){
-            Toast.makeText(this, "Categories", Toast.LENGTH_SHORT).show();
+        }else if (id==R.id.nav_search){
+            if (admin_key==null) {
+                Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+
+
+        }else if (id==R.id.nav_categories) {
+            if (admin_key==null) {
+                Toast.makeText(this, "Categories", Toast.LENGTH_SHORT).show();
+            }
+
+
+
 
         }else if (id==R.id.nav_settings){
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                if (admin_key==null) {
+
+                    startActivity(new Intent(HomeActivity.this,SettingsActivity.class));
+            }
+
 
         }else if (id==R.id.nav_logout){
-            Paper.book().destroy();
-            Intent intent = new Intent(HomeActivity.this, LogIn_Activity.class);
-            startActivity(intent);
+                if (admin_key==null) {
+                    Paper.book().destroy();
+                    Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
 
 
-        }
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+
+    private  void fetching_product_images(){
+        admin_key = getIntent().getStringExtra("Admin");
         FirebaseRecyclerOptions<Products> options = new FirebaseRecyclerOptions.Builder<Products>()
                 .setQuery(product_ref, Products.class).build();
 
         FirebaseRecyclerAdapter<Products, Product_ViewHolder> adapter=new
                 FirebaseRecyclerAdapter<Products, Product_ViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull Product_ViewHolder holder, int position, @NonNull Products model) {
+                    protected void onBindViewHolder(@NonNull Product_ViewHolder holder, int position, @NonNull final Products model) {
                         holder.Product_name_txt.setText(model.getPname());
-                        holder.Product_Price_txt.setText(model.getPrice());
+                        holder.Product_Price_txt.setText("$"+model.getPrice());
                         holder.Product_Description_txt.setText(model.getDescription());
                         Picasso.get().load(model.getImage()).into(holder.Product_Image);
+
+                        holder.Product_Image.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (admin_key!=null) {
+                                    Intent intent = new Intent(HomeActivity.this, AdminMaintainProduct.class);
+                                    intent.putExtra("pid", model.getPid());
+                                    startActivity(intent);
+
+                                } else {
+                                    Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                                    intent.putExtra("pid", model.getPid());
+                                    startActivity(intent);
+                                }
+
+                            }
+                        });
                     }
 
                     @NonNull
@@ -174,8 +233,5 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
 
         Product_RecyclerView.setAdapter(adapter);
         adapter.startListening();
-
-
-
     }
 }

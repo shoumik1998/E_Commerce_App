@@ -107,4 +107,43 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_above="@+id/product_maintain_btnID"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:background="@drawable/login_btn_back"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Check new Orders"
+            android:id="@+id/new_order_btnID"
+            android:layout_width="350dp"
+            android:layout_height="60dp"/>
+        <Button
+            android:layout_above="@+id/log_out_admin_btnID"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:background="@drawable/login_btn_back"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Maintain Product"
+            android:id="@+id/product_maintain_btnID"
+            android:layout_width="350dp"
+            android:layout_height="60dp"/>
+        <Button
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:background="@drawable/confirm_order_btn_back"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="Log out"
+            android:id="@+id/log_out_admin_btnID"
+            android:layout_width="350dp"
+            android:layout_height="60dp"/>
+    </RelativeLayout>
+
 </LinearLayout>

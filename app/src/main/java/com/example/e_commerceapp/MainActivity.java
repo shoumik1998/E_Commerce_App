@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.e_commerceapp.Model.Users;
 import com.example.e_commerceapp.Prevalent.Prevalent;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button JoinBtn,LogInBtn;
     private  String parentDB="Users";
     private  ProgressDialog loadingBar;
+    private TextView Seller;
 
 
 
@@ -73,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
             loadingBar.dismiss();
         }
 
-        JoinBtn=findViewById(R.id.join_now_btnID);
+        JoinBtn = findViewById(R.id.join_now_btnID);
         LogInBtn = findViewById(R.id.logIn_btnID);
+        Seller = findViewById(R.id.want_seller_txtID);
+
 
 
         JoinBtn.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +98,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Seller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SellerLoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser != null) {
+            Intent intent = new Intent(MainActivity.this, SellerHomeActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
     }
 }

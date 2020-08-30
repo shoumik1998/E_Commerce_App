@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class AdminCategoryActivity extends AppCompatActivity {
     private ImageView Female_Dress,T_shirt,Sweater,Glass,Shoe,Hats,Bag,HeadPhones,Laptop,Mobile,Watch,Book;
+    private Button Check_New_Orders,Maintain_product,Log_Out;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,9 @@ public class AdminCategoryActivity extends AppCompatActivity {
         Mobile = findViewById(R.id.mobileID);
         Watch = findViewById(R.id.watchID);
         Book = findViewById(R.id.bookID);
+        Check_New_Orders = findViewById(R.id.new_order_btnID);
+        Maintain_product = findViewById(R.id.product_maintain_btnID);
+        Log_Out = findViewById(R.id.log_out_admin_btnID);
 
         Female_Dress.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,6 +127,33 @@ public class AdminCategoryActivity extends AppCompatActivity {
                 Intent intent=new Intent(AdminCategoryActivity.this,AdminAddNewProduct.class);
                 intent.putExtra("Category", "Books");
                 startActivity(intent);
+            }
+        });
+
+        Check_New_Orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminNewOrderActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        Maintain_product.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoryActivity.this, HomeActivity.class);
+                intent.putExtra("Admin","Admin");
+                startActivity(intent);
+            }
+        });
+
+        Log_Out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoryActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
             }
         });
 

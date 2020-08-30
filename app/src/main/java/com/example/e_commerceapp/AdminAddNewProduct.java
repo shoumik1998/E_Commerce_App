@@ -81,7 +81,7 @@ public class AdminAddNewProduct extends AppCompatActivity {
     private void validate_product_data() {
         name=Product_Name.getText().toString();
         descriptions=Product_Descriptions.getText().toString();
-        price=Product_Price.getText().toString();
+        price=Product_Price.getText().toString().trim();
 
         if (image_uri==null){
             Toast.makeText(this, "Image is required", Toast.LENGTH_SHORT).show();
